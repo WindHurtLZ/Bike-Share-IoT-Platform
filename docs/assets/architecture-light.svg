@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="title">
+<title id="title">BikeShare IoT system architecture: cloud web application, ACME oneM2M middleware, and DECT NR+ device mesh</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2328"/></marker></defs>
+<rect width="1200" height="1500" fill="#ffffff"/>
+<rect x="40" y="30" width="1120" height="900" rx="10" fill="#f6f8fa" stroke="#1f2328" stroke-width="2"/>
+<text x="70" y="62" font-size="24" font-weight="600" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Cloud Layer</text>
+<rect x="110" y="95" width="680" height="430" rx="12" fill="#ddf4ff" stroke="#0969da" stroke-width="3"/>
+<text x="140" y="128" font-size="23" font-weight="600" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Web Application</text>
+<rect x="330" y="113" width="157.0" height="30" rx="15" fill="#ffffff" stroke="#0969da" stroke-width="1.5"/>
+<text x="408.5" y="129" font-size="15" font-weight="600" fill="#0969da" text-anchor="middle" dominant-baseline="middle">this repository</text>
+<text x="140" y="160" font-size="17" font-weight="400" fill="#59636e" text-anchor="start" dominant-baseline="middle">Django</text>
+<ellipse cx="235" cy="330" rx="80" ry="125" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="235" y="312" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Notification</text>
+<text x="235" y="342" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Server</text>
+<text x="235" y="378" font-size="15" font-weight="400" fill="#59636e" text-anchor="middle" dominant-baseline="middle" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace">/notifications</text>
+<rect x="430" y="175" width="320" height="100" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="590" y="225" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">User Interface</text>
+<rect x="430" y="385" width="320" height="100" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="590" y="422" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Web Management</text>
+<text x="590" y="452" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Dashboard</text>
+<path d="M 315 330 H 370 V 225 H 428" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 370 330 V 435 H 428" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 590 279 V 381" fill="none" stroke="#1f2328" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="466.08" y="315.6" width="247.84000000000003" height="28.8" fill="#ffffff" rx="4"/>
+<text x="590" y="330" font-size="18" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">REST API (AJAX / Fetch)</text>
+<path d="M 880 380 v 110 a 75 22 0 0 0 150 0 v -110" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<ellipse cx="955" cy="380" rx="75" ry="22" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="955" y="450" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">DB</text>
+<path d="M 754 435 H 876" fill="none" stroke="#1f2328" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="787.0" y="420.6" width="56" height="28.8" fill="#ffffff" rx="4"/>
+<text x="815" y="435" font-size="18" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">ORM</text>
+<rect x="110" y="605" width="880" height="300" rx="10" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="140" y="637" font-size="23" font-weight="600" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Middleware Layer</text>
+<rect x="150" y="660" width="800" height="225" rx="8" fill="#f6f8fa" stroke="#1f2328" stroke-width="2"/>
+<text x="180" y="690" font-size="22" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">ACME oneM2M CSE</text>
+<rect x="180" y="712" width="740" height="155" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="210" y="742" font-size="21" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Application Entity</text>
+<rect x="205" y="775" width="220" height="66" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="315" y="808" font-size="21" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Subscription</text>
+<rect x="445" y="775" width="220" height="66" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="555" y="808" font-size="21" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Management</text>
+<rect x="685" y="775" width="220" height="66" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="795" y="808" font-size="21" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Data</text>
+<path d="M 590 489 V 656" fill="none" stroke="#1f2328" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<rect x="476.15999999999997" y="550.6" width="227.68" height="28.8" fill="#ffffff" rx="4"/>
+<text x="590" y="565" font-size="18" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">REST API (GET / POST)</text>
+<circle cx="745" cy="565" r="16" fill="#0969da"/>
+<text x="745" y="566" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">1</text>
+<circle cx="782" cy="565" r="16" fill="#0969da"/>
+<text x="782" y="566" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">3</text>
+<path d="M 205 808 H 72 V 330 H 151" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="36.0" y="545.6" width="72" height="28.8" fill="#ffffff" rx="4"/>
+<text x="72" y="560" font-size="18" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Notify</text>
+<text x="72" y="588" font-size="17" font-weight="400" fill="#59636e" text-anchor="middle" dominant-baseline="middle">(HTTP)</text>
+<circle cx="72" cy="630" r="16" fill="#0969da"/>
+<text x="72" y="631" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">2</text>
+<path d="M 560 905 V 1018" fill="none" stroke="#1f2328" stroke-width="8"/>
+<path d="M 560 905 V 1018" fill="none" stroke="#ffffff" stroke-width="3"/>
+<rect x="486.48" y="945.6" width="147.04000000000002" height="28.8" fill="#ffffff" rx="4"/>
+<text x="560" y="960" font-size="18" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">CoAP over LTE</text>
+<circle cx="650" cy="960" r="16" fill="#0969da"/>
+<text x="650" y="961" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">2</text>
+<rect x="80" y="990" width="1040" height="450" rx="10" fill="#fff8c5" stroke="#9a6700" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="110" y="1026" font-size="24" font-weight="600" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Device Layer</text>
+<rect x="770" y="1011" width="311.8" height="30" rx="15" fill="#ffffff" stroke="#9a6700" stroke-width="1.5"/>
+<text x="925.9" y="1027" font-size="15" font-weight="600" fill="#9a6700" text-anchor="middle" dominant-baseline="middle">separate hardware repo · DECT NR+</text>
+<rect x="450" y="1018" width="220" height="60" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<text x="560" y="1049" font-size="22" font-weight="400" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Sink Device</text>
+<rect x="130" y="1160" width="190" height="245" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<line x1="130" y1="1212" x2="320" y2="1212" stroke="#1f2328" stroke-width="2"/>
+<text x="225" y="1187" font-size="22" font-weight="600" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Bike</text>
+<text x="146" y="1250" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Speed</text>
+<text x="146" y="1310" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Location</text>
+<text x="146" y="1370" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Temperature</text>
+<rect x="380" y="1160" width="190" height="245" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<line x1="380" y1="1212" x2="570" y2="1212" stroke="#1f2328" stroke-width="2"/>
+<text x="475" y="1187" font-size="22" font-weight="600" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Bike</text>
+<text x="396" y="1250" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Speed</text>
+<text x="396" y="1310" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Location</text>
+<text x="396" y="1370" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Temperature</text>
+<rect x="630" y="1160" width="190" height="245" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<line x1="630" y1="1212" x2="820" y2="1212" stroke="#1f2328" stroke-width="2"/>
+<text x="725" y="1187" font-size="22" font-weight="600" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Bike</text>
+<text x="646" y="1250" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Speed</text>
+<text x="646" y="1310" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Location</text>
+<text x="646" y="1370" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Temperature</text>
+<rect x="880" y="1160" width="190" height="245" rx="6" fill="#ffffff" stroke="#1f2328" stroke-width="2"/>
+<line x1="880" y1="1212" x2="1070" y2="1212" stroke="#1f2328" stroke-width="2"/>
+<text x="975" y="1187" font-size="22" font-weight="600" fill="#1f2328" text-anchor="middle" dominant-baseline="middle">Bike</text>
+<text x="896" y="1250" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Speed</text>
+<text x="896" y="1310" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Location</text>
+<text x="896" y="1370" font-size="20" font-weight="400" fill="#1f2328" text-anchor="start" dominant-baseline="middle">Temperature</text>
+<path d="M 540 1082 V 1115 H 225 V 1156" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 324 1310 H 376" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 574 1310 H 626" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 630 1250 H 574" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 880 1250 H 824" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M 725 1160 V 1130 H 600 V 1082" fill="none" stroke="#1f2328" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="360" cy="1472" r="16" fill="#0969da"/>
+<text x="360" y="1473" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">1</text>
+<text x="386" y="1473" font-size="19" font-weight="400" fill="#59636e" text-anchor="start" dominant-baseline="middle">Onboarding</text>
+<circle cx="560" cy="1472" r="16" fill="#0969da"/>
+<text x="560" y="1473" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">2</text>
+<text x="586" y="1473" font-size="19" font-weight="400" fill="#59636e" text-anchor="start" dominant-baseline="middle">Telemetry</text>
+<circle cx="760" cy="1472" r="16" fill="#0969da"/>
+<text x="760" y="1473" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">3</text>
+<text x="786" y="1473" font-size="19" font-weight="400" fill="#59636e" text-anchor="start" dominant-baseline="middle">Control</text>
+</svg>
