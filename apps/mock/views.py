@@ -7,8 +7,8 @@ import random
 
 def generate_random_location(lat, lng, radius=0.001):
     """
-    Based on latest location(lat, lng)，generate new location in the range of radius
-    by degree，0.001 = 111 meter
+    Based on latest location (lat, lng), generate new location in the range of radius
+    by degree, 0.001 = 111 meters
     """
     angle = random.uniform(0, 2 * math.pi)
     offset_lat = radius * math.cos(angle)

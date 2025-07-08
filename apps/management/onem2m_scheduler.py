@@ -1,19 +1,16 @@
-import logging
 import os
 import sys
 from datetime import datetime
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from apps.management.onem2m_service import logger, job_register_web
-
-logging.getLogger(__name__)
+from apps.management.onem2m_service import job_register_web
 
 def start_scheduler():
 
     # make sure only run scheduler on Main Env
     # (Django have autoreload with runserver, will result two process,
-    # one is main, other is sub process, wh/ich cause scheduler to call twice)
+    # one is main, other is sub process, which cause scheduler to call twice)
     # When RUN_MAIN == true, means we are on sub process, which we don't want call another schedule
     if 'runserver' not in sys.argv:
         return

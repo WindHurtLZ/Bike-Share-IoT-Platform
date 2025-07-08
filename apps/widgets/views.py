@@ -59,7 +59,7 @@ Data API
 """
 def device_path(request, device_id):
     data = DeviceData.objects.filter(device_id=device_id).order_by('timestamp')
-    # if data exist，return latest position
+    # if data exists, return the latest position
     if data.exists():
         latest_position = {
             'latitude': data.last().latitude,
@@ -172,7 +172,7 @@ def mesh_network_data(request):
                 time.sleep(1)
 
     except Exception as e:
-        print(f"Error in mesh_network_data: {e}")
+        logger.error(f"Error in mesh_network_data: {e}")
         return JsonResponse({'error': 'Internal Server Error'}, status=500)
 
 

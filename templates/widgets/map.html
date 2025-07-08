@@ -78,7 +78,7 @@
 </main>
 
 <script>
-    var map = L.map('map').setView([40.798224, -77.857236], 13);  // 默认位置
+    var map = L.map('map').setView([40.798224, -77.857236], 13);  // default location
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
@@ -92,7 +92,7 @@
     svg.append("defs").append("marker")
         .attr("id", "arrowhead")
         .attr("viewBox", "-0 -5 10 10")
-        .attr("refX", 13) // 调整箭头位置
+        .attr("refX", 13) // adjust arrow position
         .attr("refY", 0)
         .attr("orient", "auto")
         .attr("markerWidth", 6)
@@ -105,15 +105,15 @@
 
     const tooltip = d3.select(".tooltip");
 
-    // 当前模式：'tracking' 或 'signal'
+    // current mode: 'tracking' or 'signal'
     var currentMode = 'tracking';
 
-    // 当前追踪的设备
+    // device currently being tracked
     var activeDeviceId = null;
     var trackPathInterval = null;
     var globalUpdateInterval = null;
 
-    // 获取当前位置
+    // get the current location
     var currentLocationMarker = null;
     function goToCurrentLocation() {
         if (navigator.geolocation) {
@@ -121,7 +121,7 @@
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
 
-                map.setView([lat, lng], 13);  // 移动视图
+                map.setView([lat, lng], 13);  // move the view
                 if (!currentLocationMarker) {
                     currentLocationMarker = L.marker([lat, lng]).addTo(map).bindPopup("You are here").openPopup();
                 } else {
@@ -180,7 +180,7 @@
     var sinkMarker = null;
     function renderSinkNode() {
         if (!sinkMarker) {
-            // 找到sink node在nodes数组中的数据
+            // find the sink node in the nodes array
             const sinkNode = nodes.find(node => node.id === '00000');
             if (sinkNode) {
                 sinkMarker = L.marker([sinkNode.latitude, sinkNode.longitude], { icon: sinkIcon }).addTo(map)
@@ -458,7 +458,7 @@
     // Default to Tracking
     switchToTracking();
 
-    // ---------------- Simulation (Decrypt) ----------------
+    // ---------------- Simulation (deprecated: no toggle button is rendered; /simulate-device-movement/ still works) ----------------
     var isSimulating = false;  
     var simulateInterval = null; 
 

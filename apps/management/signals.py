@@ -19,4 +19,3 @@ def create_device_ae(sender, instance, created, **kwargs):
             logger.info(f"Device AE registered: RN={rn}, Originator={originator}")
         else:
             logger.error(f"Failed to register Device AE for device: {instance.name}")
-            # Todo

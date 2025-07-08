@@ -230,7 +230,7 @@ def process_mesh_connectivity(data):
 def process_battery_level(data):
     pi = data.get('pi', '')
 
-    if not pi or not pi.lower().startswith('c'):  # 不区分大小写
+    if not pi or not pi.lower().startswith('c'):  # case-insensitive
         logger.error(f"Invalid or missing 'pi' in battery data: {pi}")
         return
 
@@ -287,11 +287,10 @@ def delete_firmware(request):
         if firmware_ids:
             firmware_ids_list = firmware_ids.split(',')
             firmwares_to_delete = Firmware.objects.filter(id__in=firmware_ids_list)
-            # Optionally, you can log the deletion or perform additional checks here
-            firmwares_to_delete.delete()
-            logger.info(request, f"Successfully deleted {firmwares_to_delete.count()} firmware(s).")
+            deleted_count, _ = firmwares_to_delete.delete()
+            logger.info(f"Successfully deleted {deleted_count} firmware(s).")
         else:
-            logger.error(request, "No firmware selected for deletion.")
+            logger.error("No firmware selected for deletion.")
     return redirect('firmware_list')
 
 

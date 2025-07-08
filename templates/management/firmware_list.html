@@ -21,7 +21,7 @@
                         <div class="hidden xl:block text-sm italic mr-2 whitespace-nowrap">
                             <span class="table-items-count">0</span> items selected
                         </div>
-                        <!-- 批量删除表单 -->
+                        <!-- Batch delete form -->
                         <form id="delete-firmware-form" method="POST" action="{% url 'delete_firmware' %}">
                             {% csrf_token %}
                             <input type="hidden" name="firmware_ids" id="firmware-ids-input">
@@ -285,10 +285,10 @@
                         const checkboxes = document.querySelectorAll('input.table-item:checked');
                         const selectedCount = checkboxes.length;
 
-                        // 更新选中数量
+                        // Update the selected count
                         document.querySelector('.table-items-count').textContent = selectedCount;
 
-                        // 显示或隐藏批量操作按钮
+                        // Show or hide the batch action buttons
                         if (selectedCount > 0) {
                             countEl.classList.remove('hidden');
                         } else {

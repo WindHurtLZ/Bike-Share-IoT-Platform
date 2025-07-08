@@ -22,17 +22,16 @@ CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mz4k_gu2q9*!ye%^bv(ahbd&&$7n*%-%$&8u-g83j_3u1!eq&j'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-
 # Load Environ Config
 env = environ.Env(
     DEBUG=(bool, False)
 )
 environ.Env.read_env(os.path.join(Path(__file__).resolve().parent.parent, '.env'))
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env('SECRET_KEY', default='xxxx')
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 SERVER_URL = env('SERVER_URL')
 parsed_url = urlparse(SERVER_URL)
@@ -164,18 +163,14 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# settings.py
-
+# Email for password reset; the console backend prints messages instead of sending them
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_PORT=465
-EMAIL_USE_SSL=True
-EMAIL_HOST_USER="sahilsohani016@gmail.com"
-EMAIL_HOST_PASSWORD="aknk ggrv cslq sosn"
-
-#aknk ggrv cslq sosn
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='xxxx')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='xxxx')
 
 # Logging, django will not show info-level log by default
 LOGGING = {

@@ -266,7 +266,7 @@ def create_polling_channel(cse_url, ae_rn, originator):
 
     try:
         response = requests.post(channel_url, headers=headers, json=data, timeout=10)
-        logger.debug(f"Received response for container creation: {response.status_code}, {response.text}")
+        logger.debug(f"Received response for polling channel creation: {response.status_code}, {response.text}")
         if response.status_code in [200, 201, 403, 409]:
             if response.status_code in [403, 409]:
                 logger.warning(f"Polling Channel already exists: {response.status_code}, {response.text}")
@@ -278,7 +278,7 @@ def create_polling_channel(cse_url, ae_rn, originator):
             return False
 
     except requests.exceptions.RequestException as e:
-        logger.error(f"Exception occur during Container creation: {e}")
+        logger.error(f"Exception occurred during polling channel creation: {e}")
         return False
 
 def create_subscription_with_pch_verification(sub_url, sub_rn, originator, ae_originator, cse_url, ae_rn):
@@ -515,7 +515,7 @@ def create_module(cse_url, rs_url, module_rn, originator):
         "X-M2M-Origin": originator,
         "X-M2M-RI": request_identifier,
         "X-M2M-RVI": "3",
-        "Content-Type": "application/json;ty=28", # ty=23 FlexContainer Module
+        "Content-Type": "application/json;ty=28", # ty=28 flexContainer module
         "Accept": "application/json",
     }
 

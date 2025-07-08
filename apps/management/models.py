@@ -52,9 +52,6 @@ class Device(models.Model):
         # formate to 4 digit
         return f"{new_number:04d}"
 
-    def __str__(self):
-        return "%s: %s" % (self.owner, self.name)
-
 class Firmware(models.Model):
     DEVICE_TYPE_CHOICES = [
         ('LTE', 'LTE'),
