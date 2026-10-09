@@ -90,7 +90,7 @@ sequenceDiagram
     W->>P: retrieve request from pcu
     W->>C: verification response (2000 OK) as the bike
     C-->>W: subscription created
-    Note over C,P: later reboot / firmware updates reach the bike through the same channel
+    Note over C,P: later reboot / firmware updates<br/>reach the bike through this channel
 ```
 
 </details>
@@ -103,16 +103,13 @@ _Recorded from the Fall 2024 prototype with mock data._
 
 **Route history.** Every `bikeData` notification is stored as a `DeviceData` row; selecting a bike replays its stored positions as a path. ②
 
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/device-management.webp" alt="Device list with per-bike Reboot and Update Firmware actions, LTE and DECT NR+ firmware versions"></td>
-<td width="50%"><img src="docs/assets/speed-dashboard.webp" alt="Dashboard cards with a live speed chart for each bike"></td>
-</tr>
-<tr>
-<td valign="top"><b>Remote management.</b> Reboot a bike, or push LTE / DECT NR+ firmware to a batch of bikes, through their oneM2M management resources. ③</td>
-<td valign="top"><b>Live speed.</b> Each chart asks only for readings newer than its last point, so the dashboard stays light. ②</td>
-</tr>
-</table>
+<img src="docs/assets/device-management.webp" alt="Device list with per-bike Reboot and Update Firmware actions, LTE and DECT NR+ firmware versions" width="100%">
+
+**Remote management.** Reboot a bike, or push LTE / DECT NR+ firmware to a batch of bikes, through their oneM2M management resources. ③
+
+<img src="docs/assets/speed-dashboard.webp" alt="Dashboard cards with a live speed chart for each bike" width="100%">
+
+**Live speed.** Each chart asks only for readings newer than its last point, so the dashboard stays light. ②
 
 <img src="docs/assets/rental-flow.webp" alt="Four rider screens: enter bike ID, payment form, bike unlocked with ride timer, thank-you screen with ride duration" width="100%">
 
